@@ -1,0 +1,160 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAINDIALOG DIALOGEX 0, 0, 402, 133
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP |
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES
+CAPTION "WinFace/1.51"
+FONT 8, "Tahoma"
+BEGIN
+    PUSHBUTTON      "Open...",IDC_OPENBUTTON,52,7,50,14
+    PUSHBUTTON      "Save...",IDC_SAVEBUTTON,52,25,50,14
+    PUSHBUTTON      "Copy Image",IDC_COPYBUTTON,52,44,50,14
+    PUSHBUTTON      "To Image",IDC_TOIMAGEBUTTON,109,44,50,14
+    CONTROL         "Single Line",IDC_SINGLELINEBUTTON,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,166,44,50,14
+    CONTROL         "C-Escape",IDC_CESCAPEBUTTON,"Button",BS_AUTOCHECKBOX |
+                    BS_PUSHLIKE | WS_TABSTOP,223,44,50,14
+    EDITTEXT        IDC_XFACEEDIT,7,64,388,62,ES_MULTILINE | ES_WANTRETURN |
+                    WS_VSCROLL | WS_HSCROLL
+    CONTROL         "",IDC_IMAGE,"Static",SS_BITMAP,7,17,15,13
+    LTEXT           "Image:",IDC_STATIC,7,7,22,8
+    LTEXT           "X-Face:",IDC_STATIC,7,50,26,8
+END
+
+IDD_OFNDIALOG DIALOG DISCARDABLE  0, 0, 40, 14
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Invert",IDC_INVERTCHECK,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,6,1,34,10
+END
+
+IDD_FACEDIALOG DIALOGEX 0, 0, 41, 33
+STYLE DS_SYSMODAL | DS_MODALFRAME | WS_POPUP
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_FACEIMAGE,"Static",SS_BITMAP,0,0,20,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+    IDD_MAINDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 395
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 126
+        HORZGUIDE, 58
+    END
+
+    IDD_OFNDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 33
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 7
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_POPUPMENU MENU DISCARDABLE
+BEGIN
+    POPUP "x"
+    BEGIN
+        MENUITEM "Hide when no X-Face available",
+                                                ID_HIDEWHENNOXFACEAVAILABLE
+        MENUITEM SEPARATOR
+        MENUITEM "Double size",                 ID_DOUBLESIZE
+        MENUITEM SEPARATOR
+        MENUITEM "Black color...",              ID_BLACKCOLOR
+        MENUITEM "White color...",              ID_WHITECOLOR
+        MENUITEM SEPARATOR
+        MENUITEM "Copy Image",                  ID_COPYIMAGE
+        MENUITEM "Copy X-Face text",            ID_COPYXFACETEXT
+        MENUITEM SEPARATOR
+        MENUITEM "Disable",                     ID_DISABLE
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

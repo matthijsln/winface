@@ -1,0 +1,359 @@
+WinFace: Windows GUI for compface library
+Version 1.51, 2002-04-27
+
+Contents
+
+1. WinFace license and copyright
+2. compface license and copyright
+3. Usage notes
+    3.1 Xnews
+    3.2 Gravity
+    3.3 C-Escape
+4. Gravity X-Face display patch
+5. Version history
+
+--
+
+1. WinFace license and copyright
+
+WinFace: Windows GUI for compface library
+http://www.xs4all.nl/~walterln/winface/
+Copyright (C) 2002 Matthijs Laan
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this
+list of conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
+
+Neither name of the copyright holder nor the names of its contributors may be
+used to endorse or promote products derived from this software without specific
+prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ''AS IS''
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+--
+
+2. compface license and copyright
+
+Compface - 48x48x1 image compression and decompression
+
+Copyright (c) James Ashton - Sydney University - June 1990.
+
+Written 11th November 1989.
+
+Permission is given to distribute these sources, as long as the
+copyright messages are not removed, and no monies are exchanged.
+
+No responsibility is taken for any errors on inaccuracies inherent
+either to the comments or the code of this program, but if reported
+to me, then an attempt will be made to fix them.
+
+--
+
+3. Usage notes
+
+For information about what a X-Face is, see:
+   http://www.cs.indiana.edu/ftp/faces/index.html
+
+This program is an interface for the compface library, originally programmed
+by James Ashton. Because command-line tools work rather awkward with images,
+a simple graphical user interface is useful.
+
+In order to view an X-Face, copy the part after X-Face: present in the headers
+of the e-mail message or Usenet post and paste it in the edit-box in the
+interface, and click "To Image". The X-Face will now be decompressed and
+converted to an image.
+
+You can save this image to disk as a .bmp file by clicking "Save...". With
+"Open..." you can open a .bmp file from disk, which will be converted into an
+X-Face.
+
+Then you can paste this text into your newsreader or mailclient settings as a
+custom "X-Face" header. How this is accomplished is described for Xnews and
+Gravity in chapter 3.
+
+Before copying the text to the clipboard, you may need to click the "Single
+Line" or "C-Escape" buttons first - this depends on your newsreader or
+mailclient (For both Gravity and Xnews you first need to click "Single Line"
+but not "C-Escape"). To copy the X-Face text to the clipboard: right-click the
+edit box and click "Select All". Right-click the edit box again and select
+"Copy".
+
+You might want to test the correct configuration by posting in a test newsgroup
+such as alt.test or sending an e-mail to yourself to confirm the correct X-Face
+header was sent along with your message.
+
+For the best results, the .bmp image should be 48x48 black-and-white. Other
+image sizes will work, but will be shrunk or stretched (by Windows) which
+usually produces ugly results.
+
+Note that if you use a bitmap with colors, WinFace won't complain, but if you
+used colors and/or grayscale, the resulting image may not be what you expect.
+
+You can use a program such as Paint Shop Pro to convert a color image to
+grayscale and then to black-and-white using error diffusion dithering. I'm
+planning on integrating resampling and dithering in a next version of WinFace.
+
+--
+
+3.1 Xnews
+http://xnews.3dnews.net/
+
+Go to "Special", "Setup Xnews", "Compose", "Custom Headers", enter the
+text "X-Face: " with your X-Face after that, like this:
+
+  X-Face: ,yZe&Tj9$FUgmULRq.5...
+(note the space after the first colon)
+
+Make sure you first clicked "Single Line" in WinFace to put the X-Face on a
+single line. It's convenient to put a "*" before "X-Face: "; like this:
+
+  *X-Face: ,yZe&Tj9$FUgmULRq.5...
+
+This will make sure it is always sent by default. You can enter multiple X-Face
+headers, and select the one you want when composing a message: click
+"2. Custom" to enable or disable the X-Face header you want (only for the post
+you are writing). You can also enter something yourself, click "3. Manual
+headers".
+
+Xnews now automatically shows a X-Face if a post has one!
+
+--
+
+3.2 Microplanet Gravity
+See Tom's Gravity Pages for info:
+  http://lightning.prohosting.com/~tbates/gravity/
+  http://gravity.tbates.org/
+
+You can setup a default X-Face for every group and override that default on a
+per group basis. To setup the default, go to "View" -> "Global Options", and
+select the "Posting tab". In the "Custom headers" edit box, first enter
+"X-Face: ", and then paste the X-Face after this:
+
+  X-Face: ,yZe&Tj9$FUgmULRq.5...
+(note the space after the first colon)
+
+Because Gravity can't handle custom headers spanning more than a single line,
+you first have to put the X-Face on one line (click "Single Line"). If you want
+a different X-Face in some group, right-click on the newsgroup name, pick
+"Properties...", click "Overrides", and enter the X-Face in the "Override
+custom headers" edit box.
+
+If the custom header text exceeds 255 characters, like this:
+
+X-Face: "&lQ3uWNptUxl)kx>F!d#oH'9Hr$\K&st/&|CAQJeBCxE:<@wL)6C*yBC*c22|!0Z&ix/t/QrB-1zRt?;9v5-V`lqt(e#GF`&o's8TB3m.U4y-a7%;k6dW]`NYY/HnCiC"Y6Oh)!;AFq'zb,v{V]S{*56zR9-zPKt2J[Pi"=5G'}T+Gavk8A%4)yRZzcl@r4D68sxSd"k=i..NK/~9>jeX\|0<.t`_#_!|9|ons^[VC/cZ;~TR/sGNsL`k(K%s{}
+(total 264 characters)
+
+Gravity will truncate it to 255 characters:
+
+X-Face: "&lQ3uWNptUxl)kx>F!d#oH'9Hr$\K&st/&|CAQJeBCxE:<@wL)6C*yBC*c22|!0Z&ix/t/QrB-1zRt?;9v5-V`lqt(e#GF`&o's8TB3m.U4y-a7%;k6dW]`NYY/HnCiC"Y6Oh)!;AFq'zb,v{V]S{*56zR9-zPKt2J[Pi"=5G'}T+Gavk8A%4)yRZzcl@r4D68sxSd"k=i..NK/~9>jeX\|0<.t`_#_!|9|ons^[VC/cZ;~TR/sGNs
+
+This will garble the X-Face, so if your X-Face happens to be longer than 247
+characters you can't send it with Gravity. No workaround is known yet (apart
+from using NNTP proxy software such as Hamster, which is beyond the scope of
+this text).
+
+--
+
+3.3 C-Escape
+
+The "C-Escape" button replaces the following characters:
+
+Original      Becomes
+\              \\
+"              \"
+(line break)   \n
+%              %%
+
+This is useful if your newsreader (slrn) or e-mailclient (Eudora) treats the
+extra headers as a "C-format string". In that format, characters such as \ and
+" are "special characters". To get these characters literally, escape sequences
+must be used. For \ and " they are \\ and \", respectively.
+
+If you want the header to be on a single line, there is no need to click
+"Single Line" before clicking "C-Escape", provided that you didn't edit the
+text manually.
+
+Note: if, after clicking "C-Escape", you click on "To Image", the image will be
+garbled, but this is logical; you'll have to reload the original image or
+revert the changes manually.
+
+If you have edited the X-Face text, you can press the C-Escape button multiple
+times. This isn't very useful, though. The X-Face text will also never be
+longer than 1056 characters - if the C-escaped text would be longer than that,
+it is truncated.
+
+--
+
+4. Gravity X-Face display patch
+
+Gravity was not designed display X-Faces. I've created a patch that might add
+that feature. To apply the patch, copy gravity-x-face-patch.exe and WinFace.dll
+to the directory you have installed Gravity in and run gravity-x-face-patch.exe.
+It will check if the Gravity.exe file is a known version, create a backup of
+the original, and apply the patch.
+
+The patched Gravity.exe will require WinFace.dll to exist in the directory
+Gravity.exe is in.
+
+If you cannot find WinFace.dll, make sure you have setup Explorer to show all
+files and extensions. In Explorer, go to the Tools or View menu, choose Folder
+Options..., View tab, uncheck "Hide file extensions for known file types", and
+check "Show all files" (if available).
+
+Whenever a body is shown by Gravity, the patch will intercept the headers and
+pass them to code in WinFace.dll which will check if a X-Face header is
+present. If there is, it will show the image in a little window. Note that when
+you select another article without downloading its body after an X-Face was
+shown, the image shown won't belong to the article which is selected.
+
+In some cases the first time a post is shown the window might display a wrong
+X-Face. Clicking the posts header in Gravity's thread window again should
+correct that problem.
+
+You can move the window by holding down the left mouse button and dragging the
+mouse cursor after clicking on the window. Click the right mouse button to
+bring up a context menu with the following options:
+
+ - Hide when no X-Face available
+    When checked, the little window will not be visible when the current post
+    does not have an X-Face header.
+ - Double size
+    Stretches the X-Face to 96x96.
+ - Black color...
+    Select the color to use for "black".
+ - White color...
+    Select the color to use for "white".
+ - Copy Image
+    Copies the image to the clipboard. If you're using Windows 95 or Windows 98
+    and the image copied is entirely black, set the "black" color to black and
+    the "white" color to white. Windows 2000 doesn't have this problem.
+ - Copy X-Face text
+    Copies the X-Face text to the clipboard.
+
+    These last two options are disabled if the current post does not have an
+    X-Face header.
+ - Disable
+    Disables the display of X-Faces. This option is not saved, so the next
+    time Gravity starts the patch will be enabled. To permanently disable
+    the patch, restore the backup of the unpatched Gravity.exe.
+
+The patch saves the position of the window and some settings in
+x-face-patch.ini in your Windows directory or in the registry.
+
+Please beware that this patch is a hack. I've tested it and it works, but
+there's a chance it won't work on your system -- or worse, crash it completely.
+
+As such, there is *absolutely no guarantee* about what it will or won't do.
+Even more, I probably can't help you when it crashes so I don't support it.
+Please refer to the BSD license in chapter 1 above for the license and
+disclaimer.
+
+Make sure you have saved all open documents before running the patched Gravity
+so you lose no data when the system crashes. This is especially true for
+Windows 95, 98 and ME -- I rarely have a complete system-wide lockup on
+Windows 2000 but Windows 98 is extremely unstable in that regard. Your mileage
+may vary.
+
+Should you see a message such as "Error 96: Cannot create another thread.": the
+number (96 in this example) designates a line number in patchsupport.asm. The
+error text comes from Windows and may not apply to what's really the problem.
+
+--
+
+5. Version history
+
+Changes in 1.51
+
+  - Patch updated for Super Gravity 2.60 build 2039 from 2002-04-24
+  - Fixed switching red and blue in the choose color dialog for Gravity patch
+
+Changes in 1.5
+
+  - Fixed bug in Gravity patch that would send a message composition window to
+    the background immediately after it opened
+  - Single Line now strips spaces
+
+Changes in 1.4
+
+  - Added context menu to Gravity patch window
+
+Changes in 1.3
+
+  - Added patch for Gravity 2.3 and Gravity 2.5
+  - You can now drag a .bmp file from Explorer and drop it onto WinFace
+  - Completely rewritten, doesn't use Delphi/VCL anymore. Now written in win32
+    assembler
+  - compface now statically linked
+  - Added option to copy image to clipboard (note that the "Copy" button in
+    previous versions copied the X-Face *text* to the clipboard. You can still
+    do this by right-clicking the edit box and selecting "Select All", "Copy")
+  - Removed gif support
+  - On a certain Windows 95 computer some 24 bit .bmp's get inverted, so now
+    the Open dialog box has an "invert" checkbox so you can work around this
+    unexpected feature
+  - Several times faster (I actually notice it on a 486/50 Mhz)
+  - Packed with UPX, http://upx.sourceforge.net/ - saves 10 KB
+
+Changes in 1.2
+
+  - Pasting text now works again
+  - You can press C-Escape as much as you want
+
+Changes in 1.1.8
+
+ - Changed "Single Line" and "C Escape" button behaviour
+ - Added GIF support
+ - Saves state in WinFace.ini
+
+Changes in 1.0.7
+
+ - Fixed ~1000 chars X-Face crash bug
+ - Added Compface license text
+ - Removed Dutch translation
+ - Promoted to 1.0 version
+
+Changes in 0.1.6
+
+ - Bitmaps no longer set to monochrome before accessing the pixels
+ - Fixed resource leaks
+ - Added icon
+ - Focus now changes to "Copy" button after action
+ - Changed tab order
+
+Changes in 0.1.5
+
+ - Bitmaps are no longer accessed with scanlines. Previous method appears
+   to uncover a VCL bug
+ - License change: now BSD-licensed
+
+Changes in 0.1.4
+
+ - Added dynamic language changer
+ - Added Dutch translation
+ - Added C-Escape button and documentation
+ - Added Xnews to documentation
+ - Cleaned up source code
+
+Changes in 0.1.3
+
+ - Some bugfixes
+
+Changes in 0.1.2
+
+ - Initial public release
